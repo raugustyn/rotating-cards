@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import RotatingCard from "../components/RotatingCard/RotatingCard"
 
 class RotatingCardView extends Component {
+
     render() {
         return (
             <div>
@@ -26,8 +27,9 @@ class RotatingCardView extends Component {
                     backgroundImageSrc="http://www.vugtk.cz/TB04CUZK001/03_CartographicSituations/ZM10/Situace_01.png"
                 />
             </div>
-        );
+        )
     }
+
 }
 
-export default RotatingCardView;
+export default RotatingCardView

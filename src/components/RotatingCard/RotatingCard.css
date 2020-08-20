@@ -4,18 +4,33 @@
     max-width: 20em;
     text-align: center;
     border-radius: 1em;
-    border: brown 1px solid;
+    border: brown 2px solid;
     background-color:rgb(228, 134, 50);
     margin: 0px;
     padding: 0px;
 }
 
-.RotatingCard .Caption {
+.FocusedCard {
+    max-width: 30em;
+    width: 30em;
+}
 
+.RotatingCard .Caption {
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.BottomCaption {
+    bottom: 0;
 }
 
 .RotatingCard img {
-    width: 100%
+    width: 100%;
+    border-radius: 1em;
+    opacity: 0.8;
 }
 
 .container {
@@ -31,10 +46,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.8; /* for demo purpose  */
 }
 
-.stack-top {
-    __z-index: 9;
-    margin: 0px; /* for demo purpose  */
+.content-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
