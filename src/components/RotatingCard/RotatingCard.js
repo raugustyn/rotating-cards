@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import "./RotatingCard.css"
 
 class RotatingCard extends Component {
@@ -12,30 +12,34 @@ class RotatingCard extends Component {
         }
     }
 
+    switchCardSide() {
+        this.setState({showFrontSide: !this.state.showFrontSide})
+    }
+
     render() {
-        if (this.state.showFrontSide) {
-            return (
-                <div className="RotatingCard">
-                    <div className="container">
-                    <div className="box">
-                        <img src={this.props.backgroundImageSrc}/>
-                    </div>
-                        <div className="box stack-top">
-                    <p className="Caption">{this.props.caption}</p>
-                    {this.state.showDetails ? this.props.description : null}
-                        </div>
-                    </div>
-                </div>
-            )
-        }
-        else {
-            return (
-                <div className="RotatingCard">
-                    <p className="Caption">{this.props.caption}</p>
-                    {this.props.details}
-                </div>
-            )
-        }
+        return (
+            <div className="RotatingCard" onMouseDown={this.switchCardSide.bind(this)}>
+                {
+                    this.state.showFrontSide ?
+                        <Fragment>
+                            <div className="container">
+                                <div className="box">
+                                    <img src={this.props.backgroundImageSrc}/>
+                                </div>
+                                <div className="box stack-top">
+                                    <p className="Caption">{this.props.caption}</p>
+                                    {this.state.showDetails ? this.props.description : null}
+                                </div>
+                            </div>
+                        </Fragment>
+                        :
+                        <Fragment>
+                            <p className="Caption">{this.props.caption}</p>
+                            {this.props.details}
+                        </Fragment>
+                }
+            </div>
+        )
     }
 
 }
